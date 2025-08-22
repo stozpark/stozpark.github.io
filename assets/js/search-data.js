@@ -394,7 +394,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-project-1",
+          section: "News",},{id: "projects-intelligent-scan-for-galaxy-s9-note-9",
+          title: 'Intelligent Scan for Galaxy S9/Note 9',
+          description: "Multi‑modal authentication system that combines iris scanning and face recognition with liveness verification and image preprocessing.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/1_inteligentscan/";
+            },},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
