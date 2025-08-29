@@ -399,51 +399,76 @@ ninja.data = [{
           description: "Multi‑modal authentication system that combines iris scanning and face recognition with liveness verification and image preprocessing.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_inteligentscan/";
-            },},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
+            },},{id: "projects-bixby-wake-up-and-unlock-system-speaker-recognition",
+          title: 'Bixby Wake‑Up and Unlock System (Speaker Recognition)',
+          description: "Speaker‑recognition–based wake‑up and unlock system for Galaxy devices, enabling hands‑free activation of Bixby and secure voice‑based unlocking.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
+              window.location.href = "/projects/2_bixbyunlock/";
+            },},{id: "projects-biometrics-anti-spoofing-system-for-galaxy-s-series",
+          title: 'Biometrics Anti‑Spoofing System for Galaxy S Series',
+          description: "On‑device fingerprint anti‑spoofing system designed for Galaxy devices to detect fake biometric inputs and ensure secure user authentication.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
+              window.location.href = "/projects/3_finger/";
+            },},{id: "projects-3d-depth-metrology-for-semiconductors",
+          title: '3D Depth Metrology for Semiconductors',
+          description: "Deep‑learning algorithms for estimating three‑dimensional depth of semiconductor structures from scanning electron microscope (SEM) images.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
+              window.location.href = "/projects/4_3dsem/";
+            },},{id: "projects-virtual-metrology",
+          title: 'Virtual Metrology',
+          description: "Machine‑learning–based virtual metrology system for predicting wafer properties from process data and enabling real‑time quality control and yield prediction.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
+              window.location.href = "/projects/5_vm/";
+            },},{id: "projects-depth-imaging-sensor-based-human-activity-recognition",
+          title: 'Depth Imaging Sensor‑Based Human Activity Recognition',
+          description: "Research project that uses depth cameras and recurrent neural networks to recognise human activities from joint‑angle sequences.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
+              window.location.href = "/projects/6_har/";
+            },},{id: "projects-automatic-tft-lcd-panel-defect-detection-and-classification",
+          title: 'Automatic TFT‑LCD Panel Defect Detection and Classification',
+          description: "Convolutional‑neural‑network–based system that detects and classifies defects in TFT‑LCD panel production lines.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
+              window.location.href = "/projects/7_lcddefect/";
+            },},{id: "projects-human-image-retrieval-system-via-cnn",
+          title: 'Human Image Retrieval System via CNN',
+          description: "Convolutional‑neural‑network–based system to classify and retrieve images containing humans.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
+              window.location.href = "/projects/8_hir/";
+            },},{id: "projects-automatic-sleep-stage-classification-system",
+          title: 'Automatic Sleep Stage Classification System',
+          description: "Machine‑learning system for automated sleep staging using multi‑channel EEG, EMG and EOG signals.",
           section: "Projects",handler: () => {
-              window.location.href = "/projects/8_project/";
+              window.location.href = "/projects/8_sleep/";
+            },},{id: "projects-ars-speech-to-text-application",
+          title: 'ARS Speech‑to‑Text Application',
+          description: "Application that converts automated response system (ARS) voice prompts into visual text for improved user interaction.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_ars/";
+            },},{id: "projects-android-mame-emulator-with-wi-fi-direct",
+          title: 'Android MAME Emulator with Wi‑Fi Direct',
+          description: "Port of the Multi‑Arcade Machine Emulator (MAME) to Android with multiplayer support via Wi‑Fi Direct.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_mame/";
+            },},{id: "projects-online-sticky-note-application",
+          title: 'Online Sticky Note Application',
+          description: "Collaborative web application for brainstorming with synchronised sticky notes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_note/";
             },},{id: "projects-project-9",
           title: 'project 9',
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_project/";
+            },},{id: "projects-trading-business-information-tbt-app",
+          title: 'Trading Business Information (TBT) App',
+          description: "Application that provides technical barriers to trade (TBT) information and helps users find harmonized system (HS) codes.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_tbt/";
+            },},{id: "projects-tizen-sdk-2-2-1-usability-evaluation",
+          title: 'Tizen SDK 2.2.1 Usability Evaluation',
+          description: "Usability study of the Tizen 2.2.1 software development kit and compliance test to improve developer experience.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/9_tizen/";
             },},{
         id: 'social-linkedin',
         title: 'LinkedIn',
