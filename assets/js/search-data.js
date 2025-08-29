@@ -25,7 +25,7 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "A collection of my works.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/projects/";
@@ -394,7 +394,12 @@ ninja.data = [{
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
           description: "",
-          section: "News",},{id: "projects-intelligent-scan-for-galaxy-s9-note-9",
+          section: "News",},{id: "projects-project-9",
+          title: 'project 9',
+          description: "another project with an image 🎉",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/10_project/";
+            },},{id: "projects-intelligent-scan-for-galaxy-s9-note-9",
           title: 'Intelligent Scan for Galaxy S9/Note 9',
           description: "Multi‑modal authentication system that combines iris scanning and face recognition with liveness verification and image preprocessing.",
           section: "Projects",handler: () => {
@@ -454,11 +459,6 @@ ninja.data = [{
           description: "Collaborative web application for brainstorming with synchronised sticky notes.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/9_note/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/9_project/";
             },},{id: "projects-trading-business-information-tbt-app",
           title: 'Trading Business Information (TBT) App',
           description: "Application that provides technical barriers to trade (TBT) information and helps users find harmonized system (HS) codes.",
