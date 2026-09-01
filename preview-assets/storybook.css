@@ -267,17 +267,17 @@ body.storybook-home progress#progress {
 }
 
 .scene-hotspot--house {
-  top: 42%;
-  left: 66%;
-  width: 21%;
-  height: 47%;
+  top: 38%;
+  left: 54%;
+  width: 32%;
+  height: 43%;
 }
 
 .scene-hotspot--car {
-  top: 68%;
-  left: 84.5%;
-  width: 12%;
-  height: 20%;
+  top: 62%;
+  left: 84%;
+  width: 14%;
+  height: 18%;
 }
 
 .forest-hero__scroll {
@@ -316,6 +316,9 @@ body.storybook-home progress#progress {
 }
 
 .storybook-paper {
+  --paper-x: 0px;
+  --paper-y: 0px;
+  --story-progress: 0;
   position: relative;
   overflow: hidden;
   background: var(--storybook-paper);
@@ -335,6 +338,94 @@ body.storybook-home progress#progress {
   background-size: 17px 19px, 23px 29px;
 }
 
+.storybook-wafer {
+  position: absolute;
+  top: 14rem;
+  right: -11vw;
+  width: min(38vw, 560px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(46, 86, 54, 0.11);
+  border-radius: 50%;
+  opacity: 0.62;
+  pointer-events: none;
+  transform: translate(var(--paper-x), var(--paper-y)) rotate(-9deg);
+  transition: transform 900ms cubic-bezier(0.2, 0.7, 0.2, 1);
+  background:
+    linear-gradient(90deg, transparent 49.7%, rgba(46, 86, 54, 0.08) 50%, transparent 50.3%),
+    linear-gradient(transparent 49.7%, rgba(46, 86, 54, 0.08) 50%, transparent 50.3%),
+    repeating-radial-gradient(circle, transparent 0 11%, rgba(46, 86, 54, 0.045) 11.2% 11.5%);
+}
+
+.storybook-wafer span {
+  position: absolute;
+  border: 1px solid rgba(46, 86, 54, 0.08);
+  border-radius: 50%;
+}
+
+.storybook-wafer span:nth-child(1) {
+  inset: 16%;
+}
+
+.storybook-wafer span:nth-child(2) {
+  inset: 31%;
+}
+
+.storybook-wafer span:nth-child(3) {
+  inset: 45%;
+  background: rgba(46, 86, 54, 0.055);
+}
+
+.storybook-progress {
+  position: fixed;
+  z-index: 800;
+  top: 50%;
+  right: 24px;
+  width: 10px;
+  height: 150px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%) translateX(14px);
+  transition: opacity 300ms ease, transform 300ms ease;
+}
+
+body.storybook-scrolled .storybook-progress {
+  opacity: 0.72;
+  transform: translateY(-50%) translateX(0);
+}
+
+.storybook-progress::before,
+.storybook-progress__fill {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 1px;
+  height: 100%;
+}
+
+.storybook-progress::before {
+  background: rgba(25, 63, 37, 0.2);
+}
+
+.storybook-progress__fill {
+  background: #315f3c;
+  transform: scaleY(var(--story-progress));
+  transform-origin: top;
+}
+
+.storybook-progress__dot {
+  position: absolute;
+  top: calc(var(--story-progress) * 100%);
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border: 2px solid var(--storybook-paper);
+  border-radius: 50%;
+  background: #315f3c;
+  box-shadow: 0 0 0 1px rgba(25, 63, 37, 0.22);
+  transform: translateY(-50%);
+}
+
 .storybook-content {
   position: relative;
   z-index: 1;
@@ -348,6 +439,17 @@ body.storybook-home progress#progress {
   gap: clamp(3.25rem, 9vw, 7.8rem);
   padding: 7.3rem 0 6.5rem;
   border-bottom: 1px solid var(--storybook-rule);
+}
+
+.storybook-reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 700ms ease, transform 800ms cubic-bezier(0.2, 0.72, 0.2, 1);
+}
+
+.storybook-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .storybook-section-heading h2,
@@ -425,6 +527,14 @@ body.storybook-home progress#progress {
   margin: 0;
   padding: 1.85rem 0;
   border-bottom: 1px solid var(--storybook-rule);
+  transition: transform 260ms ease, background 260ms ease, padding 260ms ease;
+}
+
+.storybook-publications ol.bibliography > li:hover {
+  padding-right: 0.8rem;
+  padding-left: 0.8rem;
+  background: linear-gradient(90deg, rgba(74, 105, 67, 0.07), transparent 72%);
+  transform: translateX(8px);
 }
 
 .storybook-publications ol.bibliography > li .row {
@@ -550,13 +660,13 @@ body.storybook-home footer a {
   }
 
   .scene-hotspot--house {
-    left: 58%;
-    width: 28%;
+    left: 50%;
+    width: 38%;
   }
 
   .scene-hotspot--car {
-    left: 84%;
-    width: 15%;
+    left: 83%;
+    width: 17%;
   }
 
   .storybook-about {
@@ -612,6 +722,10 @@ body.storybook-home footer a {
     display: none;
   }
 
+  .storybook-progress {
+    display: none;
+  }
+
   .forest-hero__scroll {
     bottom: 1.25rem;
     left: 20px;
@@ -638,8 +752,16 @@ body.storybook-home footer a {
 
 @media (prefers-reduced-motion: reduce) {
   .forest-hero__painting,
-  .forest-hero__scroll-line::after {
+  .forest-hero__scroll-line::after,
+  .storybook-wafer,
+  .storybook-reveal,
+  .storybook-publications ol.bibliography > li {
     animation: none !important;
     transition: none !important;
+  }
+
+  .storybook-reveal {
+    opacity: 1;
+    transform: none;
   }
 }
