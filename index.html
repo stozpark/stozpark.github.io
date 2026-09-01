@@ -3,81 +3,51 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sung-Un Park — Storybook preview</title>
-    <style>
-      * { box-sizing: border-box; }
-      html, body { margin: 0; font-family: Arial, sans-serif; }
-      a { color: inherit; }
-      #navbar { position: fixed; inset: 0 0 auto; z-index: 1000; }
-      #navbar .container { min-height: 68px; margin: auto; display: flex; align-items: center; }
-      .navbar-brand { margin-right: auto; text-decoration: none; }
-      .navbar-nav { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
-      footer { padding: 2rem; }
-    </style>
+    <title>Sung-Un Park — Full redesign preview</title>
     <link rel="stylesheet" href="preview-assets/storybook.css">
   </head>
-  <body class="storybook-home fixed-top-nav">
-    <nav id="navbar" class="navbar">
-      <div class="container">
-        <a class="navbar-brand" href="#home"><strong>Sung-Un</strong> Park</a>
-        <ul class="navbar-nav">
-          <li class="nav-item active"><a class="nav-link" href="#about">about</a></li>
-          <li class="nav-item"><a class="nav-link" href="#publications">publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://blog.stoz.kr/projects/">projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="https://blog.stoz.kr/cv/">cv</a></li>
-        </ul>
-      </div>
-    </nav>
-
+  <body class="storybook-site storybook-home fixed-top-nav">
+    <nav id="navbar"><div class="container">
+      <a class="navbar-brand" href="index.html"><strong>Sung-Un</strong> Park</a>
+      <ul class="navbar-nav">
+        <li class="nav-item active"><a class="nav-link" href="#about">about</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/blog/index.html">blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/publications/index.html">publications</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/projects/index.html">projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/cv/index.html">cv</a></li>
+      </ul>
+    </div></nav>
     <main class="storybook-main">
-      <section class="forest-hero" id="home" aria-labelledby="storybook-title">
-        <div class="forest-hero__painting" aria-hidden="true">
-          <img src="preview-assets/forest-cottage-hero.webp" width="1672" height="941" alt="" draggable="false">
-        </div>
-        <div class="forest-hero__wash" aria-hidden="true"></div>
+      <section class="forest-hero" id="home">
+        <div class="forest-hero__painting"><img src="preview-assets/forest-cottage-hero-v2.webp" width="1672" height="941" alt=""></div>
+        <div class="forest-hero__wash"></div>
         <div class="forest-hero__copy">
           <p class="storybook-eyebrow">AI researcher · engineer</p>
-          <h1 id="storybook-title">Sung-Un<br>Park</h1>
+          <h1>Sung-Un<br>Park</h1>
           <p class="forest-hero__intro">Building reliable AI systems where research meets real-world engineering.</p>
           <p class="forest-hero__affiliation">Samsung AI Center <span>·</span> KAIST CI Lab</p>
         </div>
         <a class="scene-hotspot scene-hotspot--house" href="#about"><span>About</span></a>
-        <a class="scene-hotspot scene-hotspot--car" href="https://blog.stoz.kr/projects/"><span>Projects</span></a>
+        <a class="scene-hotspot scene-hotspot--car" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/projects/index.html"><span>Projects</span></a>
         <a class="forest-hero__scroll" href="#about"><span class="forest-hero__scroll-line"></span>Walk into the site</a>
       </section>
-
       <section class="storybook-paper" id="about">
         <div class="storybook-paper__grain"></div>
-        <div class="storybook-wafer" aria-hidden="true"><span></span><span></span><span></span></div>
-        <div class="storybook-progress" aria-hidden="true"><span class="storybook-progress__fill"></span><span class="storybook-progress__dot"></span></div>
+        <div class="storybook-wafer"><span></span><span></span><span></span></div>
+        <div class="storybook-progress"><span class="storybook-progress__fill"></span><span class="storybook-progress__dot"></span></div>
         <div class="storybook-content">
           <div class="storybook-about">
-            <div class="storybook-section-heading">
-              <p class="storybook-eyebrow storybook-eyebrow--dark">About</p>
-              <h2>Research that<br>has to work.</h2>
-            </div>
-            <div class="storybook-about__copy">
-              <div class="storybook-about__lead">
-                <p>I am Sung-Un Park, a staff engineer at Samsung AI Center and a Ph.D. student in Electrical Engineering at KAIST. My work focuses on building reliable, deployable AI systems in computer vision and on-device ML.</p>
-              </div>
-              <nav class="storybook-text-links"><a href="https://blog.stoz.kr/cv/">Curriculum Vitae</a><a href="#">Google Scholar</a><a href="#">LinkedIn</a></nav>
-            </div>
+            <div class="storybook-section-heading"><p class="storybook-eyebrow storybook-eyebrow--dark">About</p><h2>Research that<br>has to work.</h2></div>
+            <div class="storybook-about__copy"><div class="storybook-about__lead"><p>I am Sung-Un Park, a staff engineer at Samsung AI Center and a Ph.D. student in Electrical Engineering at KAIST. My work focuses on reliable, deployable AI systems in computer vision and on-device ML.</p></div><nav class="storybook-text-links"><a href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/cv/index.html">Curriculum Vitae</a><a href="#">Google Scholar</a><a href="#">LinkedIn</a></nav></div>
           </div>
-          <section class="storybook-selected" id="publications">
-            <div class="storybook-selected__heading">
-              <div><p class="storybook-eyebrow storybook-eyebrow--dark">Selected work</p><h2>Publications</h2></div>
-              <a class="storybook-all-work" href="https://blog.stoz.kr/publications/">View all publications →</a>
-            </div>
-            <div class="storybook-publications publications">
-              <ol class="bibliography">
-                <li><div class="title">Reliable learning for real-world visual intelligence</div><div class="author">Sung-Un Park et al.</div><div class="periodical">Selected research</div></li>
-                <li><div class="title">Deployable computer vision for semiconductor manufacturing</div><div class="author">Sung-Un Park et al.</div><div class="periodical">Selected research</div></li>
-              </ol>
-            </div>
+          <section class="storybook-selected">
+            <div class="storybook-selected__heading"><div><p class="storybook-eyebrow storybook-eyebrow--dark">Selected work</p><h2>Publications</h2></div><a class="storybook-all-work" href="https://htmlpreview.github.io/?https://github.com/stozpark/stozpark.github.io/blob/storybook-source-preview/publications/index.html">View all publications →</a></div>
+            <div class="storybook-publications publications"><ol class="bibliography"><li><div class="title">Reliable learning for real-world visual intelligence</div><div class="author">Sung-Un Park et al.</div><div class="periodical">Selected research</div></li><li><div class="title">Deployable computer vision for semiconductor manufacturing</div><div class="author">Sung-Un Park et al.</div><div class="periodical">Selected research</div></li></ol></div>
           </section>
         </div>
       </section>
     </main>
+    <div class="storybook-garden" aria-hidden="true"><div class="storybook-garden__sapling"><span class="storybook-garden__trunk"></span><span class="storybook-garden__crown storybook-garden__crown--one"></span><span class="storybook-garden__crown storybook-garden__crown--two"></span><span class="storybook-garden__crown storybook-garden__crown--three"></span></div><div class="storybook-garden__flowers storybook-garden__flowers--left"><i></i><i></i><i></i><i></i><i></i></div><div class="storybook-garden__pot"><span class="storybook-garden__stem"></span><i></i><i></i><i></i><b></b></div><div class="storybook-garden__flowers storybook-garden__flowers--right"><i></i><i></i><i></i><i></i></div></div>
     <footer class="fixed-bottom"><div class="container">© 2026 Sung-Un Park</div></footer>
     <script src="preview-assets/storybook.js"></script>
   </body>

@@ -1,34 +1,60 @@
 (() => {
+  const body = document.body;
+  if (!body) return;
+
   const hero = document.querySelector(".forest-hero");
   const paper = document.querySelector(".storybook-paper");
-  const body = document.body;
-  if (!hero || !body) return;
-
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   let scrollFrame = 0;
 
-  const updateHeader = () => {
-    const threshold = Math.max(80, hero.offsetHeight * 0.76);
-    body.classList.toggle("storybook-scrolled", window.scrollY > threshold);
+  const clamp = (value, min, max) => Math.min(max, Math.max(min, value));
+
+  const updateScrollState = () => {
+    const headerThreshold = hero ? Math.max(80, hero.offsetHeight * 0.76) : 24;
+    body.classList.toggle("storybook-scrolled", window.scrollY > headerThreshold);
+
     if (paper) {
       const distance = Math.max(1, paper.scrollHeight - window.innerHeight);
-      const progress = Math.min(1, Math.max(0, (window.scrollY - paper.offsetTop) / distance));
+      const progress = clamp((window.scrollY - paper.offsetTop) / distance, 0, 1);
       paper.style.setProperty("--story-progress", progress.toFixed(4));
     }
+
+    if (body.classList.contains("storybook-inner")) {
+      const distance = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      body.style.setProperty("--site-progress", clamp(window.scrollY / distance, 0, 1).toFixed(4));
+    }
+
     scrollFrame = 0;
   };
 
   window.addEventListener(
     "scroll",
     () => {
-      if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateHeader);
+      if (!scrollFrame) scrollFrame = window.requestAnimationFrame(updateScrollState);
     },
     { passive: true }
   );
-  updateHeader();
+  window.addEventListener("resize", updateScrollState, { passive: true });
+  updateScrollState();
 
   const revealItems = document.querySelectorAll(
-    ".storybook-section-heading, .storybook-about__copy, .storybook-selected__heading, .storybook-publications ol.bibliography > li, .storybook-social"
+    [
+      ".storybook-section-heading",
+      ".storybook-about__copy",
+      ".storybook-selected__heading",
+      ".storybook-publications ol.bibliography > li",
+      ".storybook-social",
+      ".storybook-inner .post-header",
+      ".storybook-inner .projects .category",
+      ".storybook-inner .projects > .row > .col",
+      ".storybook-inner .publications ol.bibliography > li",
+      ".storybook-inner .cv .card",
+      ".storybook-inner .header-bar",
+      ".storybook-inner .featured-posts .col",
+      ".storybook-inner .post-list > li",
+      ".storybook-inner .archive tr",
+      ".storybook-inner #markdown-content > *",
+    ].join(", ")
   );
   revealItems.forEach((item) => item.classList.add("storybook-reveal"));
 
@@ -43,12 +69,12 @@
           observer.unobserve(entry.target);
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8%" }
+      { threshold: 0.1, rootMargin: "0px 0px -6%" }
     );
     revealItems.forEach((item) => revealObserver.observe(item));
   }
 
-  if (reducedMotion) return;
+  if (reducedMotion || !hero) return;
 
   let targetX = 0;
   let targetY = 0;
