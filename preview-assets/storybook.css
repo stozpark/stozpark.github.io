@@ -1695,3 +1695,38 @@ body.storybook-site footer a {
     transform: none;
   }
 }
+
+
+/* Painterly garden close */
+.storybook-garden {
+  height: clamp(180px, 24vw, 290px);
+  margin-top: -1px;
+  border-bottom: 1px solid rgba(239, 231, 199, 0.16);
+  background: #fbf7e8;
+  isolation: isolate;
+}
+.storybook-garden::before { display: none; }
+.storybook-garden::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: url("forest-garden-objects.webp") center bottom / 100% auto no-repeat;
+  mix-blend-mode: multiply;
+  opacity: 0.94;
+  transform-origin: 50% 100%;
+  animation: storybook-garden-breathe 8s ease-in-out infinite alternate;
+}
+.storybook-garden > * { display: none !important; }
+body.storybook-home .storybook-garden { margin-top: -1px; }
+@keyframes storybook-garden-breathe {
+  from { transform: translateY(3px) scale(1); }
+  to { transform: translateY(0) scale(1.003); }
+}
+@media (max-width: 575px) {
+  .storybook-garden { height: 185px; }
+  .storybook-garden::after { background-size: auto 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .storybook-garden::after { animation: none !important; }
+}
