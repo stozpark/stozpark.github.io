@@ -1711,7 +1711,7 @@ body.storybook-site footer a {
   position: absolute;
   inset: 0;
   z-index: 2;
-  background: url("forest-garden-objects.webp") center bottom / 100% auto no-repeat;
+  background: url("preview-assets/forest-garden-objects.webp") center bottom / 100% auto no-repeat;
   mix-blend-mode: multiply;
   opacity: 0.94;
   transform-origin: 50% 100%;
